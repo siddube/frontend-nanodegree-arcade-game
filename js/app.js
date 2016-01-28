@@ -17,12 +17,12 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    
+
     //Move Enemies
     //multiply moveEnemy with dt parameter
     var moveEnemyX = this.speed * dt;
     this.x += moveEnemyX;
-    
+
     //If enemies move beyond the right boundary reset their initial postion
     //set the values to random numbers as we did during setting the intial position
     //Set the new speed of enemies to random number
@@ -31,7 +31,7 @@ Enemy.prototype.update = function(dt) {
         this.y = (Math.floor((Math.random() * 3)) * 83) + 60;
         this.speed = Math.random() * 100 + 200;
     }
-    
+
     //Collision Detection
     //If the difference of enemies.x,player.x and enemies.y,player.y
     //fall between certain values then they are colliding
@@ -87,7 +87,7 @@ Player.prototype.handleInput = function(key) {
         this.x -= 101;
     if(key === 'right' && player.x < 390)
         this.x += 101;
-    
+
     if(this.y < 0)
         this.reset('win');
 };

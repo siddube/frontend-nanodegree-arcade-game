@@ -137,7 +137,7 @@ var Engine = (function(global) {
         }
 
         renderEntities();
-        
+
         //Draw Score
         //Use score variable from app.js
         ctx.font="32px Impact";
