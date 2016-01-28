@@ -137,6 +137,12 @@ var Engine = (function(global) {
         }
 
         renderEntities();
+        
+        //Draw Score
+        //Use score variable from app.js
+        ctx.font="32px Impact";
+        ctx.fillStyle = "#fff";
+        ctx.fillText("Score : " + score,350,580);
     }
 
     /* This function is called by the render function and is called on each game
