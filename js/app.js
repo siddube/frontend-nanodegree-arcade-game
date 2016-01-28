@@ -71,6 +71,39 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//Handle Input from events triggered from keypress
+//move the player by 83 pixels on y axis
+//move the player by 101 pixels on x axis
+//Move the player only within the boundary of the canvas
+//use if to test key press and move the player only if he is within
+//and will not move out of the boundary
+//Set boundary within (0,0) and (390,390)
+Player.prototype.handleInput = function(key) {
+    if(key === 'up' && player.y > 0)
+        this.y -= 83;
+    if(key === 'down' && player.y < 390)
+        this.y += 83;
+    if(key === 'left' && player.x > 0)
+        this.x -= 101;
+    if(key === 'right' && player.x < 390)
+        this.x += 101;
+    
+    if(this.y < 0)
+        this.reset('win');
+};
+
+//Function that handles resetting of player
+//Reset player.y to 390
+//Increase score if the player made it to water
+//Make score 0 if player gets killed
+Player.prototype.reset = function(key) {
+    this.y = 390;
+    if(key === 'die')
+        score = 0;
+    else if(key === 'win')
+        score++;
+};
+
 // instantiate game objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -83,7 +116,8 @@ var enemy5 = new Enemy();
 var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
 var player = new Player();
 
-
+//Score Variable we send to print on canvas text
+var score = 0;
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
