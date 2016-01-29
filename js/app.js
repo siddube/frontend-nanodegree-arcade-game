@@ -100,9 +100,9 @@ Player.prototype.handleInput = function(key) {
 Player.prototype.reset = function(key) {
     this.y = 390;
     if(key === 'die')
-        player.score = 0;
+        this.score = 0;
     else if(key === 'win')
-        player.score++;
+        this.score++;
 };
 
 // instantiate game objects.
