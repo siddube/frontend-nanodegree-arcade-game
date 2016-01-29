@@ -1,6 +1,13 @@
-frontend-nanodegree-arcade-game
-===============================
+# Installation and Running the game
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+Clone the GitHub repository
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+`$ git clone https://github.com/siddube/frontend-nanodegree-arcade-game.git`
+
+Open Index.html with a web browser (eg.Chrome, Firefox) to start the game.
+
+# Directions to play the game
+
+- The Objective of the game is to take the player to the water zone while escaping from the enemy bugs that cross his path
+- Use direction arrow keys to move player
+
