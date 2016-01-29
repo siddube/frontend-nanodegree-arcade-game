@@ -142,7 +142,7 @@ var Engine = (function(global) {
         //Use score variable from app.js
         ctx.font="32px Impact";
         ctx.fillStyle = "#fff";
-        ctx.fillText("Score : " + score,350,580);
+        ctx.fillText("Score : " + player.score, 350, 580);
     }
 
     /* This function is called by the render function and is called on each game

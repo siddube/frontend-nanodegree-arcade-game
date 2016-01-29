@@ -56,6 +56,7 @@ var Player = function() {
     this.sprite = 'images/char-boy.png';
     this.x = 0;
     this.y = 390;
+    this.score = 0;
     this.speed = 83;
 };
 
@@ -79,13 +80,13 @@ Player.prototype.render = function() {
 //and will not move out of the boundary
 //Set boundary within (0,0) and (390,390)
 Player.prototype.handleInput = function(key) {
-    if(key === 'up' && player.y > 0)
+    if(key === 'up' && this.y > 0)
         this.y -= 83;
-    if(key === 'down' && player.y < 390)
+    if(key === 'down' && this.y < 390)
         this.y += 83;
-    if(key === 'left' && player.x > 0)
+    if(key === 'left' && this.x > 0)
         this.x -= 101;
-    if(key === 'right' && player.x < 390)
+    if(key === 'right' && this.x < 390)
         this.x += 101;
 
     if(this.y < 0)
@@ -99,25 +100,21 @@ Player.prototype.handleInput = function(key) {
 Player.prototype.reset = function(key) {
     this.y = 390;
     if(key === 'die')
-        score = 0;
+        player.score = 0;
     else if(key === 'win')
-        score++;
+        player.score++;
 };
 
 // instantiate game objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var enemy1 = new Enemy();
-var enemy2 = new Enemy();
-var enemy3 = new Enemy();
-var enemy4 = new Enemy();
-var enemy5 = new Enemy();
 
-var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
+var allEnemies = [];
+for(var i = 0; i < 5; i++) {
+  allEnemies.push(new Enemy());
+}
 var player = new Player();
 
-//Score Variable we send to print on canvas text
-var score = 0;
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
