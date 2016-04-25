@@ -2,7 +2,7 @@
 
 Clone the GitHub repository
 
-`$ git clone https://github.com/siddube/frontend-nanodegree-map-project.git`
+`$ git clone https://github.com/siddube/frontend-nanodegree-arcade-game.git`
 
 Open Index.html with a web browser (eg.Chrome, Firefox) to start the App.
 
